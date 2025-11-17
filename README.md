@@ -60,19 +60,6 @@ npx playwright install --with-deps
 
 ---
 
-## Environment Variables
-
-Local `.env`:
-
-```
-VALIDATOR_URL=https://validator-staging.polygon.technology/
-STAKING_URL=https://staking-staging.polygon.technology/
-```
-
-GitHub CI uses repository secrets with the same variable names.
-
----
-
 # Running Tests
 
 ## Run all tests
