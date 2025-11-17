@@ -1,0 +1,44 @@
+name: Validator UI Nightly Tests
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+    # Re-enable nightly nightly later:
+    # schedule:
+    #   - cron: "0 1 * * *"
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        env:
+            VALIDATOR_URL: ${{ secrets.VALIDATOR_URL }}
+            STAKING_URL: ${{ secrets.STAKING_URL }}
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: lts/*
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Install Playwright browsers
+              run: npx playwright install --with-deps
+
+            - name: Run validator UI tests (all browsers)
+              run: >
+                  npx playwright test
+                  --project=validator-ui-chromium
+                  --project=validator-ui-firefox
+                  --project=validator-ui-webkit
+
+            - uses: actions/upload-artifact@v4
+              if: always()
+              with:
+                  name: validator-ui-report
+                  path: playwright-report/
+                  retention-days: 30
