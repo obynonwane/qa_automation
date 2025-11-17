@@ -147,7 +147,7 @@ npx playwright test --grep-invert "@regression"
 
 ---
 
-# 📊 Reports
+# Reports
 
 ### View HTML Report Locally
 
