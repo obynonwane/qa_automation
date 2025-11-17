@@ -101,7 +101,7 @@ npx playwright test projects/staking-ui/tests/staking.spec.ts
 
 ---
 
-# Running Tests Using Tags (`@smoke`, `@regression`, `@critical`)
+## Running Tests Using Tags (`@smoke`, `@regression`, `@critical`)
 
 Tags are added inside **test titles**:
 
