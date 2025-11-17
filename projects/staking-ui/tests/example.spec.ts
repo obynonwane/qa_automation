@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 // @ts-check 
-test('test', async ({ page }) => {
+test('@regression test', async ({ page }) => {
   await page.goto(`${process.env.STAKING_URL}`);
   await page.getByRole('button', { name: 'Continue' }).click();
   await page.getByRole('button', { name: 'Connect wallet' }).click();

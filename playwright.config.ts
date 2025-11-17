@@ -35,6 +35,8 @@ export default defineConfig({
   reporter: 'html',
   use: {
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',  // Attach screenshots on failure
+    video: 'retain-on-failure',     // Record video for failed tests
     headless: true,
     ignoreHTTPSErrors: true,
   },
