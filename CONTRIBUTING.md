@@ -47,7 +47,7 @@ shared/
 
 ---
 
-## ✨ Writing Tests
+## Writing Tests
 
 ### 1. Create test files under:
 
@@ -175,9 +175,3 @@ Before submitting PRs:
 * [ ] No hardcoded URLs (use env vars)
 * [ ] CI workflow passes
 * [ ] Artifacts are uploaded correctly
-
----
-
-Thank you for helping improve Polygon’s test platform!
-
-````
